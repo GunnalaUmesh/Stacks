@@ -1,0 +1,50 @@
+import java.util.*;
+class Stack{
+    int[] data;
+    protected static final int def_size = 100000;
+    int top = -1;
+    public Stack(){
+        this(def_size);
+    }
+    public Stack(int size){
+        this.data = new int[size];
+    }
+    public boolean push(int value){
+        if(isFull()){
+            System.out.println("Stack is Full!!");
+            return false;
+        }
+        else{
+            top++;
+            data[top] = value;
+            System.out.println("pushed element-> "+data[top]);
+            return true;
+        }
+    }
+    public boolean pop(){
+        if(isEmpty()){
+            System.out.println("operation pop cannot be done for empty Stack!!");
+            return false;
+        }
+        else{
+            int rem = data[top];
+            top--;
+            System.out.println("popped element-> "+rem);
+            return true;
+        }
+    }
+    public int peek(){
+        if(isEmpty()){
+            System.out.println("operation peek cannot be done for empty Stack!!");
+        }
+        int rem = data[top];
+        System.out.println("peek element in stack-> "+rem);
+        return data[top];
+    }
+    public boolean isFull(){
+        return top == data.length-1;
+    }
+    public boolean isEmpty(){
+        return top == -1;
+    }
+}
