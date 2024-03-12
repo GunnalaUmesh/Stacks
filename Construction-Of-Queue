@@ -12,6 +12,7 @@ class Queue{
     public void push(int value){
         if(top >= data.length){
             System.out.println("Stack is Full!!");
+            
         }
         else{
             ++top;
@@ -24,9 +25,12 @@ class Queue{
             System.out.println("operation pop cannot be done for empty Stack!!");
         }
         else{
-            int rem = data[top];
-            --top;
-            System.out.println("popped element-> "+rem);
+            int res = data[0];
+            System.out.println("popped element-> "+res);
+            for(int i=1;i<=top;i++){
+                data[i-1] = data[i];
+            }
+            top--;
         }
     }
     public void peek(){
