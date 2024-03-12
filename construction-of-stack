@@ -10,7 +10,7 @@ class Stack{
         this.data = new int[size];
     }
     public boolean push(int value){
-        if(isFull()){
+        if(top >= data.length){
             System.out.println("Stack is Full!!");
             return false;
         }
@@ -22,7 +22,7 @@ class Stack{
         }
     }
     public boolean pop(){
-        if(isEmpty()){
+        if(top == -1){
             System.out.println("operation pop cannot be done for empty Stack!!");
             return false;
         }
@@ -34,17 +34,11 @@ class Stack{
         }
     }
     public int peek(){
-        if(isEmpty()){
+        if(top == -1){
             System.out.println("operation peek cannot be done for empty Stack!!");
         }
         int rem = data[top];
         System.out.println("peek element in stack-> "+rem);
         return data[top];
-    }
-    public boolean isFull(){
-        return top == data.length-1;
-    }
-    public boolean isEmpty(){
-        return top == -1;
     }
 }
