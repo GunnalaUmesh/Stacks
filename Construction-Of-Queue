@@ -9,28 +9,24 @@ class Queue{
     public Queue(int size){
         this.data = new int[size];
     }
-    public boolean push(int value){
+    public void push(int value){
         if(top >= data.length){
             System.out.println("Stack is Full!!");
-            return false;
         }
         else{
             ++top;
             data[top] = value;
             System.out.println("pushed element-> "+data[top]);
-            return true;
         }
     }
-    public boolean pop(){
+    public void pop(){
         if(top == -1){
             System.out.println("operation pop cannot be done for empty Stack!!");
-            return false;
         }
         else{
             int rem = data[top];
             --top;
             System.out.println("popped element-> "+rem);
-            return true;
         }
     }
     public void peek(){
